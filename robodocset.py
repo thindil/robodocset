@@ -29,7 +29,7 @@ if len(sys.argv) == 3:
     docname = sys.argv[1]
     docsdir = sys.argv[2]
 else:
-    print("You must enter exactly three arguments: name of the docset to create, name of file used as index file and relative or absolute path to the directory where ROBODoc is.")
+    print("You must enter exactly two arguments: name of the docset to create and relative or absolute path to the directory where ROBODoc generated documentation is.")
     sys.exit(0)
 
 # Files and types of entries which will be added to the index. Key is part of
