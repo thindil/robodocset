@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019 Bartek thindil Jasicki <thindil@laeran.pl>
+# Copyright (c) 2019-2020 Bartek thindil Jasicki <thindil@laeran.pl>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -74,7 +74,7 @@ for filename in glob.glob(docname + ".docset/Contents/Resources/Documents/robo_*
             pathstart = line.find("<a href=") + 9
             path = line[pathstart:line.find("\"", pathstart + 1)]
             cur.execute('INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES (?,?,?)',
-                        (line[(pos + 19):endpos], types[filename[50:-5]], path))
+                        (line[(pos + 19):endpos], types[filename[(len(docname) + 42):-5]], path))
         i += 1
 
 conn.commit()
